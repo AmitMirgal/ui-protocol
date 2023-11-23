@@ -3,6 +3,8 @@ import glob from 'fast-glob'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 
+import { Analytics } from '@vercel/analytics/react';
+
 import '@/styles/tailwind.css'
 
 export const metadata = {
@@ -29,6 +31,8 @@ export default async function RootLayout({ children }) {
           <div className="w-full">
             <Layout allSections={allSections}>{children}</Layout>
           </div>
+
+          <Analytics />
         </Providers>
       </body>
     </html>
